@@ -48,9 +48,9 @@ Introduction界面是第二页，也是导航栏中的第一个元素，简要�
 
 ![overview2.png](pic/overview2.png)
 
-#### 2.3 S-DES界面
+#### 2.3 S-AES界面
 
-S-DES界面是本项目的核心界面，为用户提供了可交互的前端GUI。在界面的前半部分提供使用说明，而界面的后半部分供用户进行输入，点击Encipher或者Decipher即完成加解密操作，并可以使用copy一键复制转换结果。
+S-AES界面是本项目的核心界面，为用户提供了可交互的前端GUI。在界面的前半部分提供使用说明，而界面的后半部分供用户进行输入，点击Encipher或者Decipher即完成加解密操作，并可以使用copy一键复制转换结果。
 
 ![overview3.png](pic/overview3.png)
 
