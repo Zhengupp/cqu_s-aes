@@ -50,7 +50,7 @@ Introduction界面是第二页，也是导航栏中的第一个元素，简要�
 
 #### 2.3 S-AES界面
 
-S-AES界面是本项目的核心界面，为用户提供了可交互的前端GUI。在界面的前半部分提供使用说明，而界面的后半部分供用户进行输入，点击Encipher或者Decipher即完成加解密操作，并可以使用copy一键复制转换结果。
+S-AES界面是本项目的核心界面，为用户提供了可交互的前端GUI。在界面的前半部分提供使用说明，而界面的后半部分供用户进行输入，点击Encode或者Decode即完成加解密操作，并可以使用copy一键复制转换结果。
 
 ![overview3.png](pic/overview3.png)
 
@@ -79,11 +79,11 @@ python manage.py runserver
 
 输入可以是16bit的数据和16bit的密钥，输出是16bit的密文：
 
-![BITFunction](README.assets/BITFunction.gif)
+![test1.png](pic/test1.png)
 
 当输出不符合标准时，返回处理失败的错误：
 
-![FalseFunction](README.assets/FalseFunction.gif)
+![test2.png](pic/test2.png)
 
 ##### 4.1.2 测试代码中测试
 
@@ -96,12 +96,6 @@ python manage.py runserver
 
 本项目在该轮测试中与其他小组进行了交叉测试，验证了我们加密算法的正确性。
 
-**其他组：**
-![img.png](README.assets/CrossTest.png)
-
-**本组：**
-![CrossMine.png](README.assets%2FCrossMine.png)
-
 我们在`/task`文件夹中提供了与其他小组测试的jupyter notebook测试代码，可以直接打开task测试文件夹中的[task2.ipynb文件](https://github.com/FangHeng/CQU_SimpleAES_Toolkit/tree/main/testZone/task2/task2.ipynb)，即可看到测试结果。
 
 #### 4.3 第3关：扩展功能
@@ -113,11 +107,11 @@ python manage.py runserver
 
 处理ASCII输入：
 
-![ASCFunction](README.assets/ASCFunction.gif)
+![test3.png](pic/test3.png)
 
 当输入不符合标准时，返回处理失败的错误：
 
-![FalseFunction](README.assets/FalseFunction.gif)
+![test4.png](pic/test4.png)
 
 ##### 4.3.2 测试代码中测试
 
@@ -219,22 +213,6 @@ triple_decrypted_plaintext = triple_saes.decrypt(triple_encrypted_ciphertext)
 发现密文在形成后的篡改会引起后一个块的更改。得出结论：在没有其他安全措施的情况下，这种篡改会引起后一个block的解密失效。
 
 这为判断篡改与否带来便利: 在重要的信息后增加一个确认block。者能够在一定程度上增加CBC工作模式的安全性。
-
-#### 4.5.4 针对CBC的攻击
-
-尽管这种加密模式很好地隐藏了明文的统计特性，但是同样也暴露出了一个很严重的缺点: 可以通过CBC的加密特点改变明文内容，但是这种改变并不会引起其它明文块对应位的改变。这种攻击常用来绕过过滤器，提权（比如从guest变为admin）等。
-
-1. 字节反转攻击
-
-在CBC模式下，每一个密文块的解密结果会与上一个密文块进行XOR操作，这使得我们可以通过修改前一个密文块来控制当前明文块的解密结果，而不会影响其他块的解密。
-
-在猜测出明文分组Pn的情况下，那么可以通过修改密文分组
-
-```markdown
-Ci-1 = Ci-1 XOR Pn XOR A，
-```
-
-这样篡改解密Pn将得到A。详细的分析请前往[task5.ipynb文件](https://github.com/FangHeng/CQU_SimpleAES_Toolkit/tree/main/testZone/task5/task5.ipynb)查看
 
 #### 4.5.5 结果分析
 
