@@ -216,10 +216,10 @@ triple_decrypted_plaintext = triple_saes.decrypt(triple_encrypted_ciphertext)
 
 #### 4.5.5 结果分析
 
-经过5.2的实例和5.3的分析，我们得出以下结论：
+经过4.5.2的实例和4.5.3的分析，我们得出以下结论：
 
 - 没有其他安全措施的CBC工作模式容易受到篡改攻击和字节替换攻击。
-- 对于5.2的内容，我们进一步做了形式化的数学论证，证明了CBC模式下的密文块替换对解密过程的影响。
+- 对于4.5.2的内容，我们进一步做了形式化的数学论证，证明了CBC模式下的密文块替换对解密过程的影响。
 
 详细的证明和讨论我们放在了`/task`文件夹中的[task5.ipynb文件](https://github.com/FangHeng/CQU_SimpleAES_Toolkit/tree/main/testZone/task5/task5.ipynb)，即可以看到详细的证明和推导。
 
